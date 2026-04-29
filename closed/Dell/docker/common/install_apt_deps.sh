@@ -36,6 +36,13 @@ install_core_packages(){
     apt install -y --no-install-recommends apt-transport-https bison libffi-dev libgdbm-dev \
         libncurses5-dev libreadline-dev libyaml-dev lsb-release software-properties-common \
         tzdata zlib1g-dev
+
+    # Install Nsight-Systems 2025.5.1
+    apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+    add-apt-repository "deb https://developer.download.nvidia.com/devtools/repos/ubuntu$(source /etc/lsb-release; echo "$DISTRIB_RELEASE" | tr -d .)/$(dpkg --print-architecture)/ /"
+    apt update
+    apt install -y libsm6 libxext6 libxrender-dev libxcb-cursor0 libxcb-xinerama0 x11-utils libxcb-xinerama0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxfixes3
+    apt install -y nsight-systems-2025.5.1
 }
 
 install_platform_specific_x86_64(){
