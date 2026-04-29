@@ -30,7 +30,8 @@ endif
 
 # Set the include directory for Loadgen header files
 INFERENCE_DIR = $(BUILD_DIR)/inference
-INFERENCE_URL = https://github.com/mlcommons/inference.git
+#INFERENCE_URL = https://github.com/mlcommons/inference.git
+INFERENCE_URL = https://github.com/hibagus/SC26_MLPerf_Inference_Loadgen
 LOADGEN_INCLUDE_DIR ?= $(INFERENCE_DIR)/loadgen
 LOADGEN_LIB_DIR ?= $(LOADGEN_INCLUDE_DIR)/build
 # Loadgen hash: 2/18/2025
@@ -109,11 +110,13 @@ SKIP_TRTLLM_BUILD ?= 0
 TRTLLM_DIR ?= $(BUILD_DIR)/TRTLLM
 TRTLLM_BUILD_DIR ?= $(BUILD_DIR)/TRTLLM/build
 TRTLLM_URL ?= ssh://git@gitlab-master.nvidia.com:12051/ftp/tekit.git
-TRTLLM_PUBLIC_URL = https://github.com/NVIDIA/TensorRT-LLM.git
+# TRTLLM_PUBLIC_URL = https://github.com/NVIDIA/TensorRT-LLM.git
+TRTLLM_PUBLIC_URL = https://github.com/hibagus/SC26_TensorRT-LLM.git
 # main branch 02/18
 TRTLLM_HASH ?= b6cca6db0af80c997282230327c8308df7912bcf
 # 2/18/2025 GitHub release main
-TRTLLM_PUBLIC_HASH = 2ea17cdad28bed0f30e80eea5b1380726a7c6493
+# TRTLLM_PUBLIC_HASH = 2ea17cdad28bed0f30e80eea5b1380726a7c6493
+TRTLLM_PUBLIC_HASH = 3ad04f269e850f8c271e396f2b7b5fddfdd30576
 
 ifeq ($(BUILD_CONTEXT), aarch64-Orin)
     TRTLLM_PUBLIC_HASH = dev-sm87-trt101
