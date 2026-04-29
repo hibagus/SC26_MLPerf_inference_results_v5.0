@@ -25,7 +25,7 @@ GPUCLK?=1000
 
 # Set the power-dev directory
 POWER_DEV_DIR = $(BUILD_DIR)/power-dev
-POWER_DEV_URL = https://github.com/mlcommons/power-dev.git
+POWER_DEV_URL = https://github.com/hibagus/SC26_power-dev.git
 POWER_DEV_HASH = f5ee305a867b24905fea1f04f1b68819d392a731
 POWER_CLIENT_SCRIPT = $(BUILD_DIR)/power-dev/ptd_client_server/client.py
 POWER_NTP_URL = ib-01.dc4-in.nvidia.com
